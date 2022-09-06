@@ -10,6 +10,11 @@ public class Archivo {
     private ObjectInputStream input;
     private ArrayList<Person> persons;
 
+    public Archivo() throws IOException{
+        persons = new ArrayList<>();
+        file = new File("src/main/resources/persons.dat");
+    }
+
     public boolean savePerson (Person person) throws IOException, ClassNotFoundException {
         try {
             getPerson();
