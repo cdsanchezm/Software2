@@ -1,46 +1,38 @@
 package co.edu.unbosque.Model.persistance;
 
 public class Person {
-    String id;
-    String tip_identificacion;
-    int num_identificacion;
+    String tip_identification;
+    int num_identification;
     String sex;
     int age;
     String names;
     String lastnames;
 
-    public Person(String id, String tip_identificacion, int num_identificacion, String sex, int age, String names, String lastnames) {
-        this.id = id;
-        this.tip_identificacion = tip_identificacion;
-        this.num_identificacion = num_identificacion;
+    public Person( String tip_identification, int num_identification, String sex, int age, String names, String lastnames) {
+        this.tip_identification = tip_identification;
+        this.num_identification = num_identification;
         this.sex = sex;
         this.age = age;
         this.names = names;
         this.lastnames = lastnames;
     }
 
-    public String getId() {
-        return id;
+
+
+    public String getTip_identification() {
+        return tip_identification;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTip_identification(String tip_identification) {
+        this.tip_identification = tip_identification;
     }
 
-    public String getTip_identificacion() {
-        return tip_identificacion;
+    public int getNum_identification() {
+        return num_identification;
     }
 
-    public void setTip_identificacion(String tip_identificacion) {
-        this.tip_identificacion = tip_identificacion;
-    }
-
-    public int getNum_identificacion() {
-        return num_identificacion;
-    }
-
-    public void setNum_identificacion(int num_identificacion) {
-        this.num_identificacion = num_identificacion;
+    public void setNum_identification(int num_identification) {
+        this.num_identification = num_identification;
     }
 
     public String getSex() {
@@ -78,9 +70,8 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id='" + id + '\'' +
-                ", tip_identificacion='" + tip_identificacion + '\'' +
-                ", num_identificacion=" + num_identificacion +
+                "tip_identification='" + tip_identification + '\'' +
+                ", num_identification=" + num_identification +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 ", names='" + names + '\'' +
