@@ -11,7 +11,7 @@ public class PersonsqliteDAO {
 
     public void Sqlite() {
         try{
-            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/databases/ingSoftwareDAO.sqlite");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/ingSoftwareDAO.sqlite");
             if(connection != null){
                 System.out.println("Conexión exitosa con sqlite");
                 connection.createStatement().execute("CREATE TABLE IF NOT EXISTS person (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(50), lastname VARCHAR(50), num_identification INTEGER, type_identification VARCHAR(60),sex VARCHAR(50) ,age INTEGER)");

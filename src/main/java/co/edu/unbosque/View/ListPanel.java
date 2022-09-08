@@ -10,9 +10,9 @@ public class ListPanel extends JPanel {
 
     private JLabel background;
     private JList users;
-    private DefaultListModel<JButton> usersList;
+    private DefaultListModel<Object[]> usersList;
     private JScrollPane bar;
-    private JButton listBinary, listCasandra, listSQL, clear;
+    private JButton listBinary, listArray, listSQL, clear,back;
     private JButton listBinary1, listCasandra1, listSQL1, clear1;
 
     public ListPanel(){
@@ -20,10 +20,16 @@ public class ListPanel extends JPanel {
 
         initializeComponents();
 
-        setVisible(true);
+        setVisible(false);
     }
 
     public void  initializeComponents() {
+
+        back = new JButton(new ImageIcon(getClass().getResource("/back.png")));
+        back.setBounds(30,25,45,45);
+        back.setActionCommand("BACK-LIST");
+        back.setVisible(true);
+        add(back);
 
         ArrayList<JButton> botones = new ArrayList<>();
 
@@ -33,11 +39,11 @@ public class ListPanel extends JPanel {
         listBinary.setVisible(true);
         add(listBinary);
 
-        listCasandra = new JButton("List Casandra");
-        listCasandra.setBounds(510, 220, 130, 50);
-        listCasandra.setActionCommand("LIST-CASANDRA");
-        listCasandra.setVisible(true);
-        add(listCasandra);
+        listArray = new JButton("List Array");
+        listArray.setBounds(510, 220, 130, 50);
+        listArray.setActionCommand("LIST-ARRAY");
+        listArray.setVisible(true);
+        add(listArray);
 
         listSQL = new JButton("List SQL");
         listSQL.setBounds(510,290,130,50);
@@ -75,38 +81,7 @@ public class ListPanel extends JPanel {
         clear1.setVisible(true);
         botones.add(clear1);
 
-        Object[] items = new ButtonItem[]{
-                new ButtonItem("Opcion 1"),
-                new ButtonItem("Opcion 2"),
-                new ButtonItem("Opcion 3"),
-                new ButtonItem("Opcion 4"),
-                new ButtonItem("Opcion 5"),
-                new ButtonItem("Opcion 6"),
-                new ButtonItem("Opcion 7"),
-                new ButtonItem("Opcion 8"),
-                new ButtonItem("Opcion 9"),
-                new ButtonItem("Opcion 0"),
-                new ButtonItem("Opcion 10"),
-                new ButtonItem("Opcion 11"),
-                new ButtonItem("Opcion 12"),
-                new ButtonItem("Opcion 13"),
-                new ButtonItem("Opcion 14"),
-                new ButtonItem("Opcion 15"),
-                new ButtonItem("Opcion 16"),
-                new ButtonItem("Opcion 17"),
-                new ButtonItem("Opcion 18"),
-                new ButtonItem("Opcion 19"),
-                new ButtonItem("Opcion 20"),
-                new ButtonItem("Opcion 21"),
-                new ButtonItem("Opcion 22"),
-                new ButtonItem("Opcion 23"),
-                new ButtonItem("Opcion 24"),
-                new ButtonItem("Opcion 25")
-        };
-
-        usersList = new DefaultListModel<>();
-        usersList.addAll(botones.stream().toList());
-        users = new JList(items);
+        users = new JList();
         users.setCellRenderer(new ButtonListRenderer());
         users.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         users.setSelectedIndex(0);
@@ -146,11 +121,11 @@ public class ListPanel extends JPanel {
         this.users = users;
     }
 
-    public DefaultListModel<JButton> getUsersList() {
+    public DefaultListModel<Object[]> getUsersList() {
         return usersList;
     }
 
-    public void setUsersList(DefaultListModel<JButton> usersList) {
+    public void setUsersList(DefaultListModel<Object[]> usersList) {
         this.usersList = usersList;
     }
 
@@ -170,12 +145,12 @@ public class ListPanel extends JPanel {
         this.listBinary = listBinary;
     }
 
-    public JButton getListCasandra() {
-        return listCasandra;
+    public JButton getListArray() {
+        return listArray;
     }
 
-    public void setListCasandra(JButton listCasandra) {
-        this.listCasandra = listCasandra;
+    public void setListArray(JButton listArray) {
+        this.listArray = listArray;
     }
 
     public JButton getListSQL() {
@@ -224,5 +199,13 @@ public class ListPanel extends JPanel {
 
     public void setClear1(JButton clear1) {
         this.clear1 = clear1;
+    }
+
+    public JButton getBack() {
+        return back;
+    }
+
+    public void setBack(JButton back) {
+        this.back = back;
     }
 }

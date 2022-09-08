@@ -8,14 +8,14 @@ public class CreatePanel extends JPanel {
     private JTextField name,lastname,age,sex,numberID;
     private JComboBox<String> typeID;
 
-    private JButton saveBinary, saveCasandra, saveSql, back;
+    private JButton saveBinary, saveArray, saveSql, back;
 
     public CreatePanel(){
         setLayout(null);
 
         initializeComponents();
 
-        setVisible(true);
+        setVisible(false);
     }
 
     public void initializeComponents(){
@@ -42,15 +42,15 @@ public class CreatePanel extends JPanel {
         numberID.setVisible(true);
         add(numberID);
 
-        age = new JTextField();
-        age.setBounds(30,330,190,25);
-        age.setVisible(true);
-        add(age);
-
         sex = new JTextField();
-        sex.setBounds(330,330,190,25);
+        sex.setBounds(30,330,190,25);
         sex.setVisible(true);
         add(sex);
+
+        age = new JTextField();
+        age.setBounds(330,330,190,25);
+        age.setVisible(true);
+        add(age);
 
         back = new JButton(new ImageIcon(getClass().getResource("/back.png")));
         back.setBounds(30,25,45,45);
@@ -64,11 +64,11 @@ public class CreatePanel extends JPanel {
         saveBinary.setVisible(true);
         add(saveBinary);
 
-        saveCasandra = new JButton("Save Casandra");
-        saveCasandra.setBounds(200,400,150,30);
-        saveCasandra.setActionCommand("SAVE-CASANDRA");
-        saveCasandra.setVisible(true);
-        add(saveCasandra);
+        saveArray = new JButton("Save Array");
+        saveArray.setBounds(200,400,150,30);
+        saveArray.setActionCommand("SAVE-ARRAY");
+        saveArray.setVisible(true);
+        add(saveArray);
 
         saveSql = new JButton("Save SQL");
         saveSql.setBounds(370,400,150,30);
@@ -138,12 +138,12 @@ public class CreatePanel extends JPanel {
         this.saveBinary = saveBinary;
     }
 
-    public JButton getSaveCasandra() {
-        return saveCasandra;
+    public JButton getSaveArray() {
+        return saveArray;
     }
 
-    public void setSaveCasandra(JButton saveCasandra) {
-        this.saveCasandra = saveCasandra;
+    public void setSaveArray(JButton saveArray) {
+        this.saveArray = saveArray;
     }
 
     public JButton getSaveSql() {

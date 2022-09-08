@@ -1,6 +1,8 @@
 package co.edu.unbosque.Model.persistance;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     String tip_identification;
     int num_identification;
     String sex;

@@ -25,12 +25,34 @@ public class MainPanel extends JFrame {
         homePanel = new HomePanel();
         createPanel = new CreatePanel();
         listPanel = new ListPanel();
-        getContentPane().add(listPanel,BorderLayout.CENTER);
+        getContentPane().add(homePanel,BorderLayout.CENTER);
     }
 
     public void showMessage(String message){
         JOptionPane.showMessageDialog(null, message);
     }
 
+    public HomePanel getHomePanel() {
+        return homePanel;
+    }
 
+    public void setHomePanel(HomePanel homePanel) {
+        this.homePanel = homePanel;
+    }
+
+    public CreatePanel getCreatePanel() {
+        return createPanel;
+    }
+
+    public void setCreatePanel(CreatePanel createPanel) {
+        this.createPanel = createPanel;
+    }
+
+    public ListPanel getListPanel() {
+        return listPanel;
+    }
+
+    public void setListPanel(ListPanel listPanel) {
+        this.listPanel = listPanel;
+    }
 }
